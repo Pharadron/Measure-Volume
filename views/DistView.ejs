@@ -1,0 +1,133 @@
+<%- include("_header1"); -%>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .container-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        /* เพื่อให้คำนวณการแยกบรรทัดเมื่อต้องการ */
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px;
+        position: relative;
+        /* เพื่อให้สามารถใช้ position: absolute กับ .container2 */
+    }
+
+
+    .container2 {
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        background-color: #f8f8f8;
+        padding: 20px;
+        width: calc(70% - 60px);
+        /* คำนวณความกว้างของ container2 โดยลบพื้นที่ padding ออก */
+        font-size: 10px;
+        /* ปรับขนาดตัวหนังสือให้เล็กลง */
+        color: #555;
+        /* สีข้อความ */
+        font-weight: 400;
+        /* ความหนาของตัวหนังสือ */
+        outline: 2px solid #ddd;
+        /* เส้นขอบรอบ */
+        background-color: #f0f0f0;
+        /* สีพื้นหลัง */
+        position: absolute;
+        /* ตั้งให้อยู่ในตำแหน่งแน่นอน */
+        left: 50%;
+        /* จัดให้อยู่ตรงกลางตามแนวนอน */
+        transform: translateX(-50%);
+        /* ย้ายตำแหน่ง container2 กลับไปที่ตำแหน่งกลางจากจุดเริ่มต้นซ้าย */
+        bottom: -400px;
+        /* ให้ container2 อยู่ห่างจากล่างของ container-wrapper 50px */
+    }
+    .container2 h4 small{
+        font-size: 17px;
+    }
+
+
+
+    .container {
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        background-color: #f8f8f8;
+        padding: 20px;
+        width: calc(33.33% - 40px);
+        /* คำนวณความกว้างของแต่ละ container โดยลบพื้นที่ padding ออก */
+        font-size: 20px;
+        /* ปรับขนาดตัวหนังสือให้เล็กลง */
+        color: #555;
+        /* สีข้อความ */
+        font-weight: 400;
+        /* ความหนาของตัวหนังสือ */
+        outline: 2px solid #ddd;
+        /* เส้นขอบรอบ */
+        background-color: #f0f0f0;
+        /* สีพื้นหลัง */
+    }
+
+    .container h1 {
+        font-size: 30px;
+        /* ปรับขนาดตัวหนังสือให้ใหญ่ขึ้น */
+        margin-bottom: 10px;
+        font-weight: 600;
+        /* ระยะห่างของข้อความด้านล่าง */
+        color: #16a343;
+    }
+
+    .container p {
+        font-size: 20px;
+        font-weight: 300;
+        margin-top: 10px;
+        /* ระยะห่างของข้อความด้านบน */
+    }
+
+
+    /* Add additional styling for the menu */
+    #menu {
+        width: 100%;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+</style>
+
+<div class="container-wrapper">
+    <div class="container">
+        <h1>วัดปริมาตรทรงกระบอก</h1>
+        <p><%= data1.STA1 %></p>
+    </div>
+    <div class="container">
+        <h1>วัดปริมาตรทรงลูกบาศก์</h1>
+        <p><%= data1.STA2 %></p>
+    </div>
+    <div class="container">
+        <h1>วัดระดับน้ำ</h1>
+        <p><%= data1.STA3 %></p>
+    </div>
+
+    <div class="container2">
+        <h1><strong>ค่าปัจจุบัน</strong></h1>
+        <div><h4><strong>A:<%= data1.Avalue %> ซม.<small><%= data1.A1 %></small> B: <%= data1.Bvalue %> ซม. <small><%= data1.B2 %></small>
+        C: <%= data1.Cvalue %> ซม. <small><%= data1.C3 %></small> D: <%= data1.Dvalue %> ซม. <small><%= data1.D4 %></small></strong></h4> </div>
+
+        <div><h4><strong><%= data1.VALUET1 %> : <%= data1.PRIMARTvalue %> ลบ.ซม.</strong></h4></div>
+        <div><h4><strong>ค่าปริมาตรที่วัดได้ :  <%= data1.SUM2value %>% </strong></h4></div>
+        <div><h4><strong>ค่าปริมาตรคงเหลือ :  <%= data1.SUMvalue %>% </strong></h4></div>
+
+        <button><a href="https://ae651998038.grafana.net/public-dashboards/08fa658f64494d22a7aebb088e7c89e9" target="_blank"> ดูค่าgrafana</a></button>
+
+    </div>
+</div>
+
+
+<%- include("_footer"); -%>

@@ -1,0 +1,75 @@
+<%- include("_header1"); -%>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .container-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .container {
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        background-color: #f8f8f8;
+        padding: 20px;
+        width: calc(33.33% - 40px); /* คำนวณความกว้างของแต่ละ container โดยลบพื้นที่ padding ออก */
+        font-size: 10px; /* ปรับขนาดตัวหนังสือให้เล็กลง */
+        color: #555; /* สีข้อความ */
+        font-weight: 400; /* ความหนาของตัวหนังสือ */
+        outline: 2px solid #ddd; /* เส้นขอบรอบ */
+        background-color: #f0f0f0; /* สีพื้นหลัง */
+    }
+
+    .container h1 {
+        font-size: 30px; /* ปรับขนาดตัวหนังสือให้ใหญ่ขึ้น */
+        margin-bottom: 10px; /* ระยะห่างของข้อความด้านล่าง */
+    }
+
+    .container p {
+        font-size: 17px; /* ปรับขนาดตัวหนังสือให้ใหญ่ขึ้น */
+        margin-top: 10px; /* ระยะห่างของข้อความด้านบน */
+    }
+
+    /* Add additional styling for the menu */
+    #menu {
+        width: 100%;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+</style>
+
+<div class="container-wrapper">
+    <div class="container">
+        <h1>วัดปริมาตรทรงกระบอก</h1>
+        <p><%= data1.STA1 %></p>
+    </div>
+    <div class="container">
+        <h1>วัดปริมาตรทรงลูกบาศก์</h1>
+        <p><%= data1.STA2 %></p>
+    </div>
+    <div class="container">
+        <h1>วัดระดับน้ำ</h1>
+        <p><%= data1.STA3 %></p>
+    </div>
+    <!-- เพิ่ม container ใหม่ที่ใหญ่ขึ้น -->
+
+</div>
+<div class="container" style="width: 100%; padding: 40px;">
+    <h1>เนื้อหา Container ที่ใหญ่ขึ้น</h1>
+    <p>เนื้อหาของคุณที่ต้องการใส่ใน container ใหญ่ขึ้น</p>
+</div>
+
+
+<%- include("_footer"); -%>
